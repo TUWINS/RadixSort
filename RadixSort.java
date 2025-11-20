@@ -50,7 +50,7 @@ public class RadixSort {
         }
         try {
             // Lee datos desde el archivo de entrada
-            BufferedReader br = new BufferedReader(new FileReader("input_radix.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("entrada_radix.txt"));
             String line = br.readLine();  /*  Lee la línea con números*/
             String[] parts = line.split(" ");  /*  Divide por espacios*/
             int[] arr = new int[parts.length];  /*  Crea arreglo*/
@@ -62,13 +62,13 @@ public class RadixSort {
              // Ejecuta Radix Sort y obtiene buckets usados
             int buckets = radixSort(arr);
             /* Escribe el resultado ordenado y estadísticas únicas*/
-            BufferedWriter bw = new BufferedWriter(new FileWriter("output_radix.txt"));
+            BufferedWriter bw = new BufferedWriter(new FileWriter("salida_radix.txt"));
             for (int num : arr) {
                 bw.write(num + " ");  /*     Escribe números ordenados*/
             }
             bw.write("\nBuckets usados: " + buckets);  /*  Agrega estadística única*/
             bw.close();  /*  Cierra el lector*/
-            System.out.println("Radix Sort único completado. Resultado en output_radix.txt");
+            System.out.println("Radix Sort único completado. Resultado en salida_radix.txt");
         } catch (IOException e) {  /*  Maneja errores de archivo*/
             e.printStackTrace();  /*  Imprime traza de error*/
         }
